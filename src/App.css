@@ -1,11 +1,13 @@
 .App {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  border: 1px solid black;
 }
+
+h1{text-align: center;}
 .counter-container{padding: 60px;}
 
-input{width: 200px;height: 80px;text-align: center;}
-button{border:none;height: 80px;width: 40px;background-color  :greenyellow;}
+input{width: 600px;height: 500px;text-align: center;font-size: 300px;}
+button{border: 1px solid black;height: 500px;width: 400px;background-color  :greenyellow;font-size: 300px;}

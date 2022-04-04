@@ -6,10 +6,14 @@ function App() {
   const[counterValue, setCounterValue] = useState(0);
  
   const decreaseValue = () => {
-          setCounterValue(parseInt(counterValue) - 1);
+          if (counterValue > 0){
+            setCounterValue(parseInt(counterValue) - 1);
+          }
   }
   const increaseValue = () => {
-        setCounterValue(parseInt(counterValue) + 1);
+        if (counterValue < 10){
+          setCounterValue(parseInt(counterValue) + 1);
+        }
   }
 
   const handleChange =(e) =>{
@@ -17,6 +21,8 @@ function App() {
     setCounterValue(e.target.value)
   }
   return (
+    <>
+    <h1>React Input Counter</h1>
     <div className="App">
       <div className="counter-container">
         <button onClick={decreaseValue}>-</button>
@@ -24,6 +30,7 @@ function App() {
         <button onClick={increaseValue}>+</button>
       </div>
     </div>
+    </>
   );
 }
 
