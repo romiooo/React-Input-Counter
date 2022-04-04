@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react"; 
+import './App.css'; 
+
 
 function App() {
+  const[counterValue, setCounterValue] = useState(0);
+ 
+  const decreaseValue = () => {
+          setCounterValue(parseInt(counterValue) - 1);
+  }
+  const increaseValue = () => {
+        setCounterValue(parseInt(counterValue) + 1);
+  }
+
+  const handleChange =(e) =>{
+    console.log(e);
+    setCounterValue(e.target.value)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="counter-container">
+        <button onClick={decreaseValue}>-</button>
+        <input type="number" onChange={(e)=>handleChange(e)} value = {counterValue} max={10} min={0}/>
+        <button onClick={increaseValue}>+</button>
+      </div>
     </div>
   );
 }
